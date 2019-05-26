@@ -30,13 +30,14 @@ namespace Poe_Launcher
         public MainWindow()
         {
             InitializeComponent();
+
             Poe_Browser.Navigate("https://www.pathofexile.com/news");
+
             if (File.Exists(path + "poeData.txt") == true)
             {
                textBox.Text = File.ReadAllText(path + "poeData.txt");                
             }            
-        }
-
+        }        
         private void Start_btn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -48,9 +49,8 @@ namespace Poe_Launcher
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void Path_btn_Click(object sender, RoutedEventArgs e)
+        }        
+        private void Open_MenuItem_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
 
@@ -59,9 +59,13 @@ namespace Poe_Launcher
             if (result == true)
             {
                 textBox.Text = ofd.FileName;
-                string value = ofd.FileName;                               
+                string value = ofd.FileName;
                 File.WriteAllText(path + "poeData.txt", value);
-            }            
-        }       
+            }
+        }
+        private void Exit_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
