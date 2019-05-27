@@ -29,6 +29,7 @@ namespace Poe_Launcher
     public partial class MainWindow : Window
     {
         Uris uris = new Uris();
+        FileHelper FileHelper = new FileHelper();
         public string path = AppDomain.CurrentDomain.BaseDirectory;
 
         public MainWindow()
@@ -38,10 +39,8 @@ namespace Poe_Launcher
             
             Poe_Browser.Navigate(uris.PoeMainWeb);
 
-            if (File.Exists(path + "poeData.txt") == true)
-            {
-               textBox.Text = File.ReadAllText(path + "poeData.txt");                
-            }            
+            FileHelper.LoadFile();
+            textBox.Text = FileHelper.readData;                   
         }        
         private void Start_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -57,16 +56,8 @@ namespace Poe_Launcher
         }        
         private void Open_MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-
-            var result = ofd.ShowDialog();
-
-            if (result == true)
-            {
-                textBox.Text = ofd.FileName;
-                string value = ofd.FileName;
-                File.WriteAllText(path + "poeData.txt", value);
-            }
+            FileHelper.SaveFile();
+            textBox.Text = FileHelper.poePath;           
         }
         private void Exit_MenuItem_Click(object sender, RoutedEventArgs e)
         {
