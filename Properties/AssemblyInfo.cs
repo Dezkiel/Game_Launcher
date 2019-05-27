@@ -8,7 +8,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Poe_Launcher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Created by Dezkiel")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Poe_Launcher")]

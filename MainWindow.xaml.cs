@@ -16,6 +16,9 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Threading;
+using Poe_Launcher.Classes;
+
 #endregion
 
 namespace Poe_Launcher
@@ -24,14 +27,16 @@ namespace Poe_Launcher
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {      
+    {
+        Uris uris = new Uris();
         public string path = AppDomain.CurrentDomain.BaseDirectory;
 
         public MainWindow()
         {
+            
             InitializeComponent();
-
-            Poe_Browser.Navigate("https://www.pathofexile.com/news");
+            
+            Poe_Browser.Navigate(uris.PoeMainWeb);
 
             if (File.Exists(path + "poeData.txt") == true)
             {
@@ -66,6 +71,26 @@ namespace Poe_Launcher
         private void Exit_MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void PoeMain_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Poe_Browser.Navigate(uris.PoeMainWeb);
+        }
+
+        private void PoeTradeExternal_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Poe_Browser.Navigate(uris.PoeTradeExternal);
+        }
+
+        private void PoeTradeInternal_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Poe_Browser.Navigate(uris.PoeTradeInternal);
+        }
+
+        private void PoeNinja_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Poe_Browser.Navigate(uris.PoeNinja);
         }
     }
 }
