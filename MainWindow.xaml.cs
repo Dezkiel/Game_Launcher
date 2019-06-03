@@ -27,8 +27,7 @@ namespace Poe_Launcher
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        Uris uris = new Uris();
+    {        
         FileHelper FileHelper = new FileHelper();
         public string path = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -36,8 +35,8 @@ namespace Poe_Launcher
         {
             
             InitializeComponent();
-            
-            Poe_Browser.Navigate(uris.PoeMainWeb);
+
+            Poe_Browser.Navigate(Uris.PoeMainWeb);
 
             FileHelper.LoadFile();
             textBox.Text = FileHelper.readData;                   

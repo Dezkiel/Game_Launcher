@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Poe_Launcher.Classes
 {
-    public class Uris
+    public static class Uris
     {
-        public string PoeMainWeb = "https://www.pathofexile.com/news";     
+        public static string PoeMainWeb = "https://www.pathofexile.com/news";     
     }
 }
