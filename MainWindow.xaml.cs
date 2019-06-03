@@ -63,25 +63,6 @@ namespace Poe_Launcher
         {
             Environment.Exit(0);
         }
-
-        private void PoeMain_MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Poe_Browser.Navigate(uris.PoeMainWeb);
-        }
-
-        private void PoeTradeExternal_MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Poe_Browser.Navigate(uris.PoeTradeExternal);
-        }
-
-        private void PoeTradeInternal_MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Poe_Browser.Navigate(uris.PoeTradeInternal);
-        }
-
-        private void PoeNinja_MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Poe_Browser.Navigate(uris.PoeNinja);
-        }
+       
     }
 }

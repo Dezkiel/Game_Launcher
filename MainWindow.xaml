@@ -6,7 +6,7 @@
         xmlns:eo="http://schemas.essentialobjects.com/wpf/"
         xmlns:local="clr-namespace:Poe_Launcher"
         mc:Ignorable="d"
-        Title="POE Launcher" Height="800" Width="1220" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Style="{DynamicResource WindowStyle1}" Icon="Images/Poe_Icon3.png">
+        Title="POE Launcher" WindowStartupLocation="CenterScreen" Style="{DynamicResource WindowStyle1}" Icon="Images/Poe_Icon3.png" Width="1448" ResizeMode="NoResize" Height="796">
     <Window.Background>
         <ImageBrush ImageSource="Images/POE_Legion.png" Stretch="Uniform">
             <ImageBrush.RelativeTransform>
@@ -19,17 +19,15 @@
             </ImageBrush.RelativeTransform>
         </ImageBrush>
     </Window.Background>
-    <Grid>
+    <Grid Margin="0,0,4,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="21*"/>
-            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="399*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="start_btn" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="110" Style="{DynamicResource ButtonStyle1}" Click="Start_btn_Click" RenderTransformOrigin="0.531,0.52" Margin="0,30,0,0" BorderThickness="0" Grid.RowSpan="2">
+        <Button x:Name="start_btn" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="110" Style="{DynamicResource ButtonStyle1}" Click="Start_btn_Click" RenderTransformOrigin="0.531,0.52" Margin="30,15,0,0" BorderThickness="0">
             <Button.Effect>
                 <DropShadowEffect Color="#FF600E68"/>
             </Button.Effect>
@@ -46,20 +44,14 @@
                 </ImageBrush>
             </Button.Background>
         </Button>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="108" Margin="10,7,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145" Visibility="Hidden" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="108" Margin="10,7,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145" Visibility="Hidden"/>
         <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="160" Background="Black">
             <MenuItem Header="File" Background="Black" Foreground="White">
                 <MenuItem x:Name="open_MenuItem" Header="Open" Click="Open_MenuItem_Click" Background="Black" BorderBrush="Black" BorderThickness="0"/>
                 <MenuItem x:Name="exit_MenuItem" Header="Exit" Click="Exit_MenuItem_Click" Background="Black" BorderThickness="0"/>
             </MenuItem>
-            <MenuItem Header="Websites" Background="Black" Foreground="White">
-                <MenuItem x:Name="poeMain_MenuItem" Header="Poe Main" Click="PoeMain_MenuItem_Click" Background="Black" BorderBrush="Black" BorderThickness="0"/>
-                <MenuItem x:Name="poeTradeExternal_MenuItem" Header="Poe Trade External" Click="PoeTradeExternal_MenuItem_Click" Background="Black" BorderThickness="0"/>
-                <MenuItem x:Name="PoeTradeInternal_MenuItem" Header="Poe Trade Internal" Click="PoeTradeInternal_MenuItem_Click" Background="Black" BorderThickness="0"/>
-                <MenuItem x:Name="PoeNinja_MenuItem" Header="Poe Ninja" Click="PoeNinja_MenuItem_Click" Background="Black" BorderThickness="0"/>
-            </MenuItem>
         </Menu>
-        <WebBrowser x:Name="Poe_Browser" Grid.Column="1" HorizontalAlignment="Left" Height="765" Margin="5,5,0,-1" VerticalAlignment="Top" Width="995" Grid.RowSpan="2"/>
+        <WebBrowser x:Name="Poe_Browser" Height="765" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1195"/>
 
 
 
